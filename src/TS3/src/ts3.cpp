@@ -70,11 +70,11 @@ QString TS3::connect()
     QString s_data = QString::fromUtf8(ba.data());
 
     if (s_data.contains("client_nickname")) {
-        QRegularExpression regex("client_nickname=([a-zA-Z]*)");
+        QRegularExpression regex("client_nickname=([^ ]*)");
         QRegularExpressionMatchIterator i = regex.globalMatch(s_data);
         while (i.hasNext()) {
             QRegularExpressionMatch match = i.next();
-            output += match.captured(1) + "\n";
+            output += match.captured(1).replace("\\s", " ") + "\n";
         }
         break;
     }
