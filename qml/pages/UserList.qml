@@ -36,6 +36,7 @@ Page {
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaListView {
+        id: listview
         anchors.fill: parent
 
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
