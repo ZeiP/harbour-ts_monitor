@@ -93,3 +93,10 @@ QStringList TS3::fetchUsers()
   QNetworkReply* reply = manager->put(null, req);
 */
 }
+
+QString TS3::userCount()
+{
+    QStringList users = this->fetchUsers();
+    int userCount = users.count();
+    return QString::number(userCount);
+}

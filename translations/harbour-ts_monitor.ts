@@ -4,7 +4,12 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>TS Monitor</source>
+        <source>In Teamspeak:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>users</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
