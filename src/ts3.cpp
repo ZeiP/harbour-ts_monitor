@@ -42,7 +42,7 @@ TS3::TS3(QObject *parent) :
 
 }
 
-void TS3::update()
+QStringList TS3::fetchUsers()
 {
   QStringList users;
 
@@ -83,7 +83,7 @@ void TS3::update()
     }
   }
 
-  this->userlist = users;
+  return users;
 
 
   /*

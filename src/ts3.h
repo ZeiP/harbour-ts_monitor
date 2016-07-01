@@ -42,7 +42,7 @@ public:
 
   explicit TS3(QObject *parent = 0);
 
-  void update();
+  QStringList fetchUsers();
     /*
   Q_INVOKABLE bool write(const QString& data);
   Q_INVOKABLE bool exists();
@@ -59,7 +59,7 @@ signals:
   void error(const QString& msg);
 
 private:
-  QStringList userlist;
+
 };
 
 #endif // TS3_H

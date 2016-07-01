@@ -54,44 +54,7 @@ int main(int argc, char *argv[])
 
     TS3 *ts3 = new TS3();
 
-    QStringList users;
-
-    quint64 port = Q_UINT64_C(10011);
-
-    QTcpSocket socket;
-
-    socket.connectToHost("linode.leivo.org", port);
-    socket.waitForConnected();
-    socket.waitForReadyRead();
-
-    while (true) {
-        if (socket.canReadLine()) {
-            socket.readAll();
-            socket.waitForReadyRead();
-            break;
-        }
-    }
-
-    socket.write("use 1\n");
-    socket.waitForBytesWritten();
-    socket.write("clientlist\n");
-    socket.waitForBytesWritten();
-
-    socket.waitForReadyRead();
-    while (true) {
-      QByteArray ba = socket.readLine();
-      QString s_data = QString::fromUtf8(ba.data());
-
-      if (s_data.contains("client_nickname")) {
-          QRegularExpression regex("client_nickname=([^ ]*)");
-          QRegularExpressionMatchIterator i = regex.globalMatch(s_data);
-          while (i.hasNext()) {
-              QRegularExpressionMatch match = i.next();
-              users << match.captured(1).replace("\\s", " ");
-          }
-          break;
-      }
-    }
+    QStringList users = ts3->fetchUsers();
 
 /*    QStringListModel *model = new QStringListModel();
         model->setStringList(users);
