@@ -19,8 +19,6 @@ SOURCES += src/harbour-ts_monitor.cpp \
 
 OTHER_FILES += qml/harbour-ts_monitor.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/FirstPage.qml \
-    qml/pages/SecondPage.qml \
     rpm/harbour-ts_monitor.changes.in \
     rpm/harbour-ts_monitor.spec \
     rpm/harbour-ts_monitor.yaml \
@@ -40,8 +38,8 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-ts_monitor-de.ts
 
 HEADERS += \
-    src/TS3/src/ts3.h \
-    src/TS3/src/ts3.h \
     src/ts3.h
 
-include(src/TS3/TS3.pri)
+DISTFILES += \
+    qml/pages/UserList.qml \
+    qml/pages/Settings.qml

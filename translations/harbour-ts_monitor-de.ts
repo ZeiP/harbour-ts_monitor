@@ -9,7 +9,18 @@
     </message>
 </context>
 <context>
-    <name>FirstPage</name>
+    <name>Settings</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation type="unfinished">Element</translation>
+    </message>
+</context>
+<context>
+    <name>UserList</name>
     <message>
         <source>Settings</source>
         <translation type="unfinished"></translation>
@@ -20,17 +31,6 @@
     </message>
     <message>
         <source>Now in TeamSpeak</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SecondPage</name>
-    <message>
-        <source>Item</source>
-        <translation>Element</translation>
-    </message>
-    <message>
-        <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
