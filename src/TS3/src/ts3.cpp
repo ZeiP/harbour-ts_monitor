@@ -32,6 +32,9 @@
 #include <QNetworkAccessManager>
 #include <QDebug>
 #include <QRegularExpression>
+#include <QStringListModel>
+#include <QQmlContext>
+#include <QQuickView>
 
 TS3::TS3(QObject *parent) :
   QObject(parent)
@@ -39,9 +42,9 @@ TS3::TS3(QObject *parent) :
 
 }
 
-QString TS3::connect()
+void TS3::update()
 {
-  QString output = "";
+  QStringList users;
 
   quint64 port = Q_UINT64_C(10011);
 
@@ -74,11 +77,14 @@ QString TS3::connect()
         QRegularExpressionMatchIterator i = regex.globalMatch(s_data);
         while (i.hasNext()) {
             QRegularExpressionMatch match = i.next();
-            output += match.captured(1).replace("\\s", " ") + "\n";
+            users << match.captured(1).replace("\\s", " ");
         }
         break;
     }
   }
+
+  this->userlist = users;
+
 
   /*
   QNetworkAccessManager *manager = new QNetworkAccessManager(this);
@@ -87,5 +93,15 @@ QString TS3::connect()
   QByteArray req = "use 1";
   QNetworkReply* reply = manager->put(null, req);
 */
-  return output;
 }
+/*
+QStringListModel TS3::users()
+{
+    QStringListModel *model = new QStringListModel();
+
+    model->setStringList(this->userlist);
+
+    qDebug() << model;
+
+    return model;
+} */

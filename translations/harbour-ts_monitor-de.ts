@@ -4,12 +4,20 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>My Cover</source>
-        <translation>Mein Cover</translation>
+        <source>TS Monitor</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Now in TeamSpeak</source>
         <translation type="unfinished"></translation>
@@ -18,12 +26,12 @@
 <context>
     <name>SecondPage</name>
     <message>
-        <source>Nested Page</source>
-        <translation>Unterseite</translation>
-    </message>
-    <message>
         <source>Item</source>
         <translation>Element</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -31,18 +31,18 @@
 #define TS3_H
 
 #include <QObject>
-#include <QString>
+#include <QStringListModel>
 
 class TS3 : public QObject
 {
   Q_OBJECT
 
 public:
-  Q_PROPERTY(QString source READ source WRITE setSource NOTIFY sourceChanged)
+  //Q_PROPERTY(QStringListModel users READ users NOTIFY usersChanged)
 
   explicit TS3(QObject *parent = 0);
 
-  Q_INVOKABLE QString connect();
+  void update();
     /*
   Q_INVOKABLE bool write(const QString& data);
   Q_INVOKABLE bool exists();
@@ -50,17 +50,16 @@ public:
   Q_INVOKABLE bool mkpath(const QString& dirpath);
   */
 
-  QString source() { return mSource; };
+  QStringListModel users();
 
 public slots:
-  void setSource(const QString& source) { mSource = source; };
 
 signals:
-  void sourceChanged(const QString& source);
+  void usersChanged(const QString& users);
   void error(const QString& msg);
 
 private:
-  QString mSource;
+  QStringList userlist;
 };
 
 #endif // TS3_H

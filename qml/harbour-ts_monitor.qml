@@ -39,5 +39,3 @@ ApplicationWindow
     allowedOrientations: Orientation.All
     _defaultPageOrientations: Orientation.All
 }
-
-

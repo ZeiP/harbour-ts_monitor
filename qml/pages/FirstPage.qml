@@ -41,17 +41,58 @@ Page {
     }
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
-    SilicaFlickable {
+    SilicaListView {
         anchors.fill: parent
 
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
-/*        PullDownMenu {
+        PullDownMenu {
             MenuItem {
-                text: qsTr("Show Page 2")
+                text: qsTr("Settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
             }
-        } */
+            MenuItem {
+                text: qsTr("Refresh")
+                onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
+            }
+        }
 
+        width: parent.width;
+        height: parent.height
+
+        model: myModel
+
+        /*ListModel {
+            ListElement { name: "Paul"; telephone: "342342341" }
+            ListElement { name: "Laura"; telephone: "343241" }
+            ListElement { name: "Luca"; telephone: "6454341" }
+            ListElement { name: "Daniel"; telephone: "23431231" }
+            ListElement { name: "Seb"; telephone: "666342342341" }
+            ListElement { name: "Carl"; telephone: "55342342341" }
+            }
+*/
+        //ts3.connect()
+
+        header: PageHeader {
+            title: qsTr("Now in TeamSpeak")
+        }
+
+        delegate: Item {
+            id: delegate
+            width: parent.width
+            height: Theme.itemSizeMedium
+
+            Label {
+                text: modelData
+                font.pixelSize: Theme.fontSizeMedium
+                anchors {
+                            left: parent.left
+                            right: parent.right
+                            margins: Theme.paddingLarge
+
+                        }
+            }
+        }
+/*
         // Tell SilicaFlickable the height of its content.
         contentHeight: column.height
 
@@ -67,12 +108,11 @@ Page {
             }
             Label {
                 x: Theme.paddingLarge
-                //text: qsTr("Users") + ts3.connect()
                 text: ts3.connect()
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeExtraLarge
             }
-        }
+        } */
     }
 }
 

@@ -37,17 +37,66 @@
 
 int main(int argc, char *argv[])
 {
-    // SailfishApp::main() will display "qml/template.qml", if you need more
-    // control over initialization, you can use:
-    //
-    //   - SailfishApp::application(int, char *[]) to get the QGuiApplication *
-    //   - SailfishApp::createView() to get a new QQuickView * instance
-    //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
-    //
-    // To display the view, call "show()" (will show fullscreen on device).
+    // Set up QML engine.
+    QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
+    QScopedPointer<QQuickView> v(SailfishApp::createView());
 
+    // If you wish to publish your app on the Jolla harbour, it is recommended
+    // that you prefix your internal namespaces with "harbour.".
+    //
+    // For details see:
+    // https://harbour.jolla.com/faq#1.5.0
+    //qmlRegisterType<DemoModel>("com.example", 1, 0, "DemoModel");
     qmlRegisterType<TS3, 1>("harbour.ts_monitor.TS3", 1, 0, "TS3");
 
-    return SailfishApp::main(argc, argv);
-}
+    QStringList users;
 
+    quint64 port = Q_UINT64_C(10011);
+
+    QTcpSocket socket;
+
+    socket.connectToHost("linode.leivo.org", port);
+    socket.waitForConnected();
+    socket.waitForReadyRead();
+
+    while (true) {
+        if (socket.canReadLine()) {
+            socket.readAll();
+            socket.waitForReadyRead();
+            break;
+        }
+    }
+
+    socket.write("use 1\n");
+    socket.waitForBytesWritten();
+    socket.write("clientlist\n");
+    socket.waitForBytesWritten();
+
+    socket.waitForReadyRead();
+    while (true) {
+      QByteArray ba = socket.readLine();
+      QString s_data = QString::fromUtf8(ba.data());
+
+      if (s_data.contains("client_nickname")) {
+          QRegularExpression regex("client_nickname=([^ ]*)");
+          QRegularExpressionMatchIterator i = regex.globalMatch(s_data);
+          while (i.hasNext()) {
+              QRegularExpressionMatch match = i.next();
+              users << match.captured(1).replace("\\s", " ");
+          }
+          break;
+      }
+    }
+
+/*    QStringListModel *model = new QStringListModel();
+        model->setStringList(users);
+*/
+    QQmlContext *ctxt = v->rootContext();
+
+    ctxt->setContextProperty("myModel", QVariant::fromValue(users));
+
+    // Start the application.
+    v->setSource(SailfishApp::pathTo("qml/harbour-ts_monitor.qml"));
+    v->show();
+    return app->exec();
+}
