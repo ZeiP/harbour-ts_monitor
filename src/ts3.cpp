@@ -85,7 +85,6 @@ QStringList TS3::fetchUsers()
 
   return users;
 
-
   /*
   QNetworkAccessManager *manager = new QNetworkAccessManager(this);
   manager->connectToHost('linode.leivo.org', port);
@@ -94,14 +93,3 @@ QStringList TS3::fetchUsers()
   QNetworkReply* reply = manager->put(null, req);
 */
 }
-/*
-QStringListModel TS3::users()
-{
-    QStringListModel *model = new QStringListModel();
-
-    model->setStringList(this->userlist);
-
-    qDebug() << model;
-
-    return model;
-} */

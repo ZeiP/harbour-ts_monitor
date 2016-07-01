@@ -53,18 +53,7 @@ Page {
         width: parent.width;
         height: parent.height
 
-        model: myModel
-
-        /*ListModel {
-            ListElement { name: "Paul"; telephone: "342342341" }
-            ListElement { name: "Laura"; telephone: "343241" }
-            ListElement { name: "Luca"; telephone: "6454341" }
-            ListElement { name: "Daniel"; telephone: "23431231" }
-            ListElement { name: "Seb"; telephone: "666342342341" }
-            ListElement { name: "Carl"; telephone: "55342342341" }
-            }
-*/
-        //ts3.connect()
+        model: ts3.fetchUsers()
 
         header: PageHeader {
             title: qsTr("Now in TeamSpeak")
@@ -86,27 +75,6 @@ Page {
                         }
             }
         }
-/*
-        // Tell SilicaFlickable the height of its content.
-        contentHeight: column.height
-
-        // Place our content in a Column.  The PageHeader is always placed at the top
-        // of the page, followed by our content.
-        Column {
-            id: column
-
-            width: page.width
-            spacing: Theme.paddingLarge
-            PageHeader {
-                title: qsTr("Now in TeamSpeak")
-            }
-            Label {
-                x: Theme.paddingLarge
-                text: ts3.connect()
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeExtraLarge
-            }
-        } */
     }
 }
 

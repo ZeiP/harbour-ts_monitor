@@ -46,22 +46,10 @@ int main(int argc, char *argv[])
     //
     // For details see:
     // https://harbour.jolla.com/faq#1.5.0
-    //qmlRegisterType<DemoModel>("com.example", 1, 0, "DemoModel");
     qmlRegisterType<TS3, 1>("harbour.ts_monitor", 1, 0, "TS3");
 
-    //import harbour.ts_monitor.TS3 1.0 // Import TS3 Class
-//import harbour.ts_monitor 1.0 // Import TS3 Class
-
     TS3 *ts3 = new TS3();
-
-    QStringList users = ts3->fetchUsers();
-
-/*    QStringListModel *model = new QStringListModel();
-        model->setStringList(users);
-*/
-    QQmlContext *ctxt = v->rootContext();
-
-    ctxt->setContextProperty("myModel", QVariant::fromValue(users));
+    v->rootContext()->setContextProperty("ts3", ts3);
 
     // Start the application.
     v->setSource(SailfishApp::pathTo("qml/harbour-ts_monitor.qml"));
