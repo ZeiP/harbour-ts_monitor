@@ -83,6 +83,8 @@ QStringList TS3::fetchUsers()
     }
   }
 
+  socket.close();
+
   return users;
 
   /*
