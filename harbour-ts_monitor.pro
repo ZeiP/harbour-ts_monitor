@@ -14,7 +14,8 @@ TARGET = harbour-ts_monitor
 
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-ts_monitor.cpp
+SOURCES += src/harbour-ts_monitor.cpp \
+    src/ts3.cpp
 
 OTHER_FILES += qml/harbour-ts_monitor.qml \
     qml/cover/CoverPage.qml \
@@ -40,6 +41,7 @@ TRANSLATIONS += translations/harbour-ts_monitor-de.ts
 
 HEADERS += \
     src/TS3/src/ts3.h \
-    src/TS3/src/ts3.h
+    src/TS3/src/ts3.h \
+    src/ts3.h
 
 include(src/TS3/TS3.pri)

@@ -31,14 +31,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-import harbour.ts_monitor.TS3 1.0 // Import TS3 Class
-
 Page {
     id: page
-
-    TS3 {
-      id: ts3
-    }
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaListView {
