@@ -44,12 +44,14 @@ TS3::TS3(QObject *parent) :
 
 QStringList TS3::fetchUsers(QString hostname, QString port, QString server_id)
 {
-  QStringList users;
+  QStringList users = QStringList();
 
   QTcpSocket socket;
 
-  socket.connectToHost(hostname, port.toInt());
-  socket.waitForConnected();
+  socket.connectToHost(hostname, (quint32) port.toInt());
+  if (!socket.waitForConnected(5000)) {
+      return users;
+  }
   socket.waitForReadyRead();
 
   while (true) {
