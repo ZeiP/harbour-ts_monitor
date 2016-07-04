@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 
 Dialog {
     id: settingspage
+
     SilicaFlickable {
         anchors.fill: parent
         Column {
@@ -11,7 +12,7 @@ Dialog {
                 acceptText: qsTr("Save")
             }
             TextField {
-                id: hostname
+                id: hostnameField
                 width: parent.width
                 label: qsTr("TeamSpeak 3 server hostname")
                 placeholderText: qsTr("TeamSpeak 3 server hostname")
@@ -24,7 +25,7 @@ Dialog {
                 EnterKey.onClicked: port.focus = true
             }
             TextField {
-                id: port
+                id: portField
                 width: parent.width
                 label: qsTr("TeamSpeak 3 server port (default 10011)")
                 placeholderText: qsTr("TeamSpeak 3 server port (default 10011)")
@@ -36,7 +37,7 @@ Dialog {
                 EnterKey.onClicked: server_id.focus = true
             }
             TextField {
-                id: server_id
+                id: serverIdField
                 width: parent.width
                 label: qsTr("TeamSpeak 3 server ID (default 0)")
                 placeholderText: qsTr("TeamSpeak 3 server ID (default 0)")
@@ -52,9 +53,9 @@ Dialog {
     }
     onDone: {
         if (result == DialogResult.Accepted) {
-            settings.hostname = hostname.text
-            settings.port = port.text
-            settings.server_id = server_id.text
+            settings.hostname = hostnameField.text
+            settings.port = portField.text
+            settings.server_id = serverIdField.text
         }
     }
 }
