@@ -14,13 +14,21 @@
     </message>
 </context>
 <context>
-    <name>Settings</name>
+    <name>SettingsPage</name>
     <message>
-        <source>Settings</source>
+        <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Item</source>
+        <source>TeamSpeak 3 server hostname</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TeamSpeak 3 server port (default 10011)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TeamSpeak 3 server ID (default 0)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

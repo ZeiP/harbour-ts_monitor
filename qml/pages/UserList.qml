@@ -13,18 +13,18 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))
+                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
             }
             MenuItem {
                 text: qsTr("Refresh")
-                onClicked: listview.model = ts3.fetchUsers()
+                onClicked: listview.model = ts3.fetchUsers(settings.hostname, settings.port, settings.server_id)
             }
         }
 
         width: parent.width;
         height: parent.height
 
-        model: ts3.fetchUsers()
+        model: ts3.fetchUsers(settings.hostname, settings.port, settings.server_id)
 
         header: PageHeader {
             title: qsTr("Now in TeamSpeak")

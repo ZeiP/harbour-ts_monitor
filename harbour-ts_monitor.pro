@@ -42,4 +42,5 @@ HEADERS += \
 
 DISTFILES += \
     qml/pages/UserList.qml \
-    qml/pages/Settings.qml
+    qml/pages/SettingsPage.qml \
+    qml/common/Settings.qml

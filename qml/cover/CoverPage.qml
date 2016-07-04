@@ -5,14 +5,14 @@ CoverBackground {
     Label {
         id: label
         anchors.centerIn: parent
-        text: qsTr("In Teamspeak:\n") + ts3.userCount() + " " + qsTr("users")
+        text: qsTr("In Teamspeak:\n") + ts3.userCount(settings.hostname, settings.port, settings.server_id) + " " + qsTr("users")
     }
 
-    CoverActionList {
+/*    CoverActionList {
         id: coverAction
 
         CoverAction {
             iconSource: "image://theme/icon-cover-refresh"
         }
-    }
+    } */
 }

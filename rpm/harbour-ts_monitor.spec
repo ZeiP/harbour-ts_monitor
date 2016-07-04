@@ -16,7 +16,7 @@ Summary:    TeamSpeak monitor
 Version:    0.1
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
+License:    GNU GPL 2.0
 URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-ts_monitor.yaml
@@ -28,7 +28,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my SailfishOS Application
+TeamSpeak monitor queries the set TeamSpeak server and shows any online users.
 
 
 %prep

@@ -42,15 +42,13 @@ TS3::TS3(QObject *parent) :
 
 }
 
-QStringList TS3::fetchUsers()
+QStringList TS3::fetchUsers(QString hostname, QString port, QString server_id)
 {
   QStringList users;
 
-  quint64 port = Q_UINT64_C(10011);
-
   QTcpSocket socket;
 
-  socket.connectToHost("linode.leivo.org", port);
+  socket.connectToHost(hostname, port.toInt());
   socket.waitForConnected();
   socket.waitForReadyRead();
 
@@ -62,7 +60,7 @@ QStringList TS3::fetchUsers()
       }
   }
 
-  socket.write("use 1\n");
+  socket.write(("use " + server_id + "\n").toUtf8());
   socket.waitForBytesWritten();
   socket.write("clientlist\n");
   socket.waitForBytesWritten();
@@ -96,9 +94,9 @@ QStringList TS3::fetchUsers()
 */
 }
 
-QString TS3::userCount()
+QString TS3::userCount(QString hostname, QString port, QString server_id)
 {
-    QStringList users = this->fetchUsers();
+    QStringList users = this->fetchUsers(hostname, port, server_id);
     int userCount = users.count();
     return QString::number(userCount);
 }
