@@ -16,15 +16,17 @@ CoverBackground {
         Label {
             id: label
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("In Teamspeak:\n") + ts3.userCount(settings.hostname, settings.port, settings.server_id) + " " + qsTr("users")
+            text: mainWindow.userCount
         }
-
-/*    CoverActionList {
-        id: coverAction
+    }
+    CoverActionList {
+        id: coverRefresh
 
         CoverAction {
             iconSource: "image://theme/icon-cover-refresh"
+            onTriggered: {
+                refreshData();
+            }
         }
-    } */
     }
 }

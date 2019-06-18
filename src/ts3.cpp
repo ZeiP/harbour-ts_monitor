@@ -17,6 +17,13 @@ QStringList TS3::fetchUsers(QString hostname, QString port, QString server_id)
 {
   QStringList users = QStringList();
 
+  if (port == "") {
+      port = "10011";
+  }
+  if (server_id == "") {
+      server_id = "0";
+  }
+
   QTcpSocket socket;
 
   socket.connectToHost(hostname, (quint32) port.toInt());
@@ -68,11 +75,4 @@ QStringList TS3::fetchUsers(QString hostname, QString port, QString server_id)
   QByteArray req = "use 1";
   QNetworkReply* reply = manager->put(null, req);
 */
-}
-
-QString TS3::userCount(QString hostname, QString port, QString server_id)
-{
-    QStringList users = this->fetchUsers(hostname, port, server_id);
-    int userCount = users.count();
-    return QString::number(userCount);
 }

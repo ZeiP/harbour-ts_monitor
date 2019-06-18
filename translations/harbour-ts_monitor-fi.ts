@@ -5,45 +5,45 @@
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna</translation>
     </message>
     <message>
         <source>TeamSpeak 3 server hostname</source>
-        <translation type="unfinished"></translation>
+        <translation>TeamSpeak 3 -palvelimen isäntänimi</translation>
     </message>
     <message>
         <source>TeamSpeak 3 server port (default %1)</source>
-        <translation type="unfinished"></translation>
+        <translation>TeamSpeak 3 -palvelimen portti (oletus %1)</translation>
     </message>
     <message>
         <source>TeamSpeak 3 server ID (default %1)</source>
-        <translation type="unfinished"></translation>
+        <translation>TeamSpeak 3 -palvelimen ID (oletus %1)</translation>
     </message>
 </context>
 <context>
     <name>UserList</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitä</translation>
     </message>
     <message>
         <source>Now in TeamSpeak</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyt TeamSpeakissa</translation>
     </message>
 </context>
 <context>
     <name>harbour-ts_monitor</name>
     <message>
         <source>%1 users</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 käyttäjää</translation>
     </message>
     <message>
         <source>In TeamSpeak:</source>
-        <translation type="unfinished"></translation>
+        <translation>TeamSpeakissa:</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import org.nemomobile.configuration 1.0
+import Nemo.Configuration 1.0
 
 ConfigurationGroup {
     id: ts_settings
@@ -7,6 +7,6 @@ ConfigurationGroup {
     path: "/apps/harbour-ts_monitor"
 
     property string hostname
-    property int port
-    property int server_id
+    property string port
+    property string server_id
 }

@@ -17,14 +17,16 @@ Page {
             }
             MenuItem {
                 text: qsTr("Refresh")
-                onClicked: listview.model = ts3.fetchUsers(settings.hostname, settings.port, settings.server_id)
+                onClicked: {
+                    refreshData();
+                }
             }
         }
 
         width: parent.width;
         height: parent.height
 
-        model: ts3.fetchUsers(settings.hostname, settings.port, settings.server_id)
+        model: userList
 
         header: PageHeader {
             title: qsTr("Now in TeamSpeak")
@@ -36,15 +38,17 @@ Page {
             height: Theme.itemSizeMedium
 
             Label {
-                text: modelData
+                text: userData
                 font.pixelSize: Theme.fontSizeMedium
                 anchors {
-                            left: parent.left
-                            right: parent.right
-                            margins: Theme.paddingLarge
-
-                        }
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
             }
+        }
+        Component.onCompleted: {
+            refreshData();
         }
     }
 }

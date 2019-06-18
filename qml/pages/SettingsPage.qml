@@ -27,8 +27,8 @@ Dialog {
             TextField {
                 id: portField
                 width: parent.width
-                label: qsTr("TeamSpeak 3 server port (default 10011)")
-                placeholderText: qsTr("TeamSpeak 3 server port (default 10011)")
+                label: qsTr("TeamSpeak 3 server port (default %1)").arg("10011")
+                placeholderText: qsTr("TeamSpeak 3 server port (default %1)").arg("10011")
                 text: settings.port > 0 ? settings.port : ""
                 inputMethodHints: Qt.ImhDigitsOnly
 
@@ -39,8 +39,8 @@ Dialog {
             TextField {
                 id: serverIdField
                 width: parent.width
-                label: qsTr("TeamSpeak 3 server ID (default 0)")
-                placeholderText: qsTr("TeamSpeak 3 server ID (default 0)")
+                label: qsTr("TeamSpeak 3 server ID (default %1)").arg("0")
+                placeholderText: qsTr("TeamSpeak 3 server ID (default %1)").arg("0")
                 text: settings.server_id
                 inputMethodHints: Qt.ImhDigitsOnly
 

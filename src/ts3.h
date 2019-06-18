@@ -15,16 +15,6 @@ public:
 
   Q_INVOKABLE QStringList fetchUsers(QString hostname, QString port, QString server_id);
 
-  Q_INVOKABLE QString userCount(QString hostname, QString port, QString server_id);
-    /*
-  Q_INVOKABLE bool write(const QString& data);
-  Q_INVOKABLE bool exists();
-  Q_INVOKABLE bool exists(const QString& filename);
-  Q_INVOKABLE bool mkpath(const QString& dirpath);
-  */
-
-  QStringListModel users();
-
 public slots:
 
 signals:
