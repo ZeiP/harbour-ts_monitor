@@ -2,6 +2,41 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>AboutPage</name>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TS3 monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Thanking:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>– Jyri-Petteri ”ZeiP” Paloposki (author)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Server installation instructions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GitHub (source codes and issues)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Simple application for listing active users on a TeamSpeak server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
@@ -32,6 +67,10 @@
     </message>
     <message>
         <source>Now in TeamSpeak</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About and help</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

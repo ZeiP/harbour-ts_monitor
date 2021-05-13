@@ -1,5 +1,4 @@
 *.user
 rpm/harbour-ts_monitor.spec.*
-*.png
 *.xcf
 harbour-ts_monitor.pro.user.*
