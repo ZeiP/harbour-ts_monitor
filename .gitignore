@@ -1,4 +1,4 @@
 *.user
-rpm/harbour-ts_monitor.spec.*
+rpm/harbour-ts_monitor.spec*
 *.xcf
-harbour-ts_monitor.pro.user.*
+harbour-ts_monitor.pro.user*
